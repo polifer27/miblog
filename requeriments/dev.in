@@ -1,0 +1,6 @@
+-r app.in
+-r docs.in
+-r tests.in
+-r styles.in
+pip-tools
+black

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Krub:wght@400;700&family=Oswald&family=Potta+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='base.css')}}">
+    <title>Blogcito</title>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="h1">
+                <h1>Mi blogcito</h1>
+            </div>
+            <div class="a-suscribite">
+                <a href="registrar.html">Suscribite</a>
+            </div>    
+        </div>
+    </header>
+    <nav class="navegador">
+        <ul>
+            <li><a href="index.html">Inicio</a></li> 
+            <li><a href="ingresar.html">Ingresar</a></li>
+            <li><a href="registrar.html">Registrar</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="foto-principal">
+            <img src="{{ url_for('static', filename='fondo-main.webp')}}">
+           
+        </div>
+        <div class="clearfix">
+            <div class="img-container">
+                <img src="img/logohtml5.jpg" alt="Logo Html5" style="width:60%" height="200px">
+                <a class="link-articulo" href="">Aprende a maquetar con html5</a>
+            </div>
+
+            <div class="img-container">
+                <img class="imagen-css" src="img/logocss.jpg" alt="logo Css3" style="width:60%" height="200px">
+                <a class="link-articulo"  href="">Todo lo que nunca te animaste a preguntar sobre Css3</a>
+            </div>
+            
+          </div> 
+    </main>
+    <br>
+    <footer>
+        <h2>Mi blog personal</h2>
+        <h3>@2022 pablo fernandez</h3>
+    </footer>
+</body>
+</html>

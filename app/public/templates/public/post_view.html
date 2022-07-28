@@ -1,0 +1,49 @@
+{% extends "base_template.html" %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+    <div class="titulo-post-view">
+    <h1>{{ post.title }}</h1>
+    </div>
+    
+        <span class="blogDate">Publicado el {{ post.created|datetime('full') }}</span>
+    
+    {% if post.image_name %}
+    <div class="imagen-contenido">
+        <img class="imagen-post" src="{{ url_for('media_posts', filename=post.image_name) }}" />
+    
+{% endif %}
+    
+    <div class="contenido-post">
+        {{ post.content }}
+    
+    <h2>Comentarios</h2>
+    {% if current_user.is_authenticated %}
+    <div>
+        <form action="" method="post" novalidate>
+            {{ form.hidden_tag() }}
+            <div>
+                {{ form.content.label }}
+                {{ form.content }}<br>
+                {% for error in form.content.errors %}
+                <span style="color: red;">{{ error }}</span>
+                {% endfor %}
+            </div>
+            <div>
+                {{ form.submit() }}
+            </div>
+        </form>
+    </div>
+    {% endif %}
+    <div id="comments">
+        {% for comment in post.comments %}
+        <div>
+            El usuario {{ comment.user_name }} comentó el <span class="blogDate">
+                {{ comment.created|datetime }}</span>:
+        </div>
+        {% endfor %}
+    </div>
+</div>
+</div>
+{% endblock %}

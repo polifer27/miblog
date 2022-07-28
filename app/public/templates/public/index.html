@@ -1,0 +1,40 @@
+{% extends "base_template.html" %}
+{% block title %}Tutorial Flask: Miniblog{% endblock %}
+{% block content %}
+    <ul>
+    <div class="clearfix">    
+    {% for post in post_pagination.items %}
+    
+        <div class="img-container">
+            <img src="{{ url_for('media_posts', filename=post.image_name) }}" style='width:60%' height='200px'/>
+            <li class="posts"><a href="{{ url_for('public.show_post', slug=post.title_slug) }}">
+                {{ post.title }}<span class="postCreated">({{ post.created|datetime }})</span></a></li>
+               
+                
+        </div>    
+            
+            <!--  <div class="clearfix">
+            <div class="img-container">
+                <img src="img/logohtml5.jpg" alt="Logo Html5" style="width:60%" height="200px">
+                <a class="link-articulo" href="">Aprende a maquetar con html5</a>
+            </div>
+            -->
+    {% else %}
+        <li>No hay entradas</li>
+    {% endfor %}
+    </div>
+    </ul>
+    <div class=pagination>
+        {%- for page in post_pagination.iter_pages() %}
+            {% if page %}
+                {% if page != post_pagination.page %}
+                    <a href="{{ url_for('public.index', page=page) }}">{{ page }}</a>
+                
+                   
+                {% endif %}
+            {% else %}
+                <span class=ellipsis>…</span>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,1 @@
+INSERT INTO blog_user(id, name, email, password, is_admin) VALUES (5,'DustinJohnson', 'dustinjohnson@gmail.com', 'dustin1234', 't');

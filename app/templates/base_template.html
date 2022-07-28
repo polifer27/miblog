@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Krub:wght@400;700&family=Oswald&family=Potta+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@500&family=Fascinate&family=Oswald:wght@300&family=Sofia&family=Tai+Heritage+Pro&display=swap" rel="stylesheet"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arima:wght@300&family=Edu+VIC+WA+NT+Beginner:wght@500&family=Fascinate&family=Oswald:wght@300&family=Sofia&family=Tai+Heritage+Pro&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='base.css')}}">
+    
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="h1">
+                <h1>Mi blogcito</h1>
+            </div>
+            <div class="a-suscribite">
+                <a href="registrar.html">Suscribite</a>
+            </div>    
+        </div>
+        
+    </header>
+    <nav class="navegador">
+        <ul class="user-info">
+            <li><a href="{{ url_for('public.index') }}">Home</a></li>
+            {% if current_user.is_anonymous %}
+                <li><a href="{{ url_for('auth.login') }}">Login</a></li>
+                
+                <li><a href="{{ url_for('auth.show_signup_form') }}">Registrar</a></li>
+            {% else %}
+                <li>{{ current_user.name }}</li>
+                
+                {% if current_user.is_admin %}
+                    
+                    <li><a href="{{ url_for('admin.index') }}">Admin</a></li>
+                {% endif %}
+               
+                <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+            {% endif %}
+        </ul>
+        
+    </nav>
+    
+   <!-- <img class="foto-base" src="static/fondo-main.webp">-->
+    <img class="foto-base" src="{{ url_for('static', filename='fondo-main.webp')}}">
+  
+    {% block content %}{% endblock %}
+    <footer>
+        <h2>Mi blogcito</h2>
+        <h3>@2022 Pablo Fernández</h3>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,335 @@
+/*
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    line-height: 1.5;
+    
+}
+
+h1, h2, h3, h4 {
+    margin: 1em 0 .5em;
+    line-height: 1.25
+}
+
+h1 {
+    font-size: 2em
+}
+
+h2 {
+    font-size: 1.5em;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.2em
+}
+
+ul, ol {
+    margin: 1em 0;
+    padding-left: 40px
+}
+
+p, figure {
+    margin: 1em 0
+}
+
+a img {
+    border: none
+}
+
+sup, sub {
+    line-height: 0;
+}
+
+.user-info {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.user-info li {
+    display: inline-block;
+    margin: 0;
+    padding: 0 10px 0 0;
+}
+
+.error{
+    padding-top: 200px;
+    
+}*/
+:root{
+    --blanco: #ffffff;
+    --karry: #ffebd2;
+    --atomic-tangerine: #ffa364;
+    --crusta: #fc7643;
+    --apple-blossom: #b6230d;
+    --pickled-bluewood: #273248;
+    --amarilloblog: #f7ce3e;
+    --celesteblog: rgb(37, 150, 190);
+    --blackblog: #1b1d1c;
+    --blancoblog: #f7ffd8;
+    --screen: #c5c1c0;
+    --rosablog: #ffa580;
+    --marronblog: #5d4c28;
+    --verdeoscuroblog: #1c5f5c;
+    --azulblog: #396592;
+    --denim: #1a2930;
+    /* Fresco y apacible */
+    --lavender: #6c648B; 
+    --aqua: #6BBAA7;
+    --sunshine: #FBA100;
+    --dusty-rose: #B6A19E;
+    /* Fino y moderno */
+    --electric: #3cc47c;
+    --light:#e9c893;
+    --forest:#1E392A;
+    /* tonos calidos */
+    --grain: #d7cec7;
+    --blackboard: #565656;
+    --oxblood: #76323f;
+    --tan: #c09f80;
+    /* salon de belleza*/
+    --fondo-claro: #DAF7A6;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    background-color: var(--fondo-claro);
+
+    display: grid;
+    flex-direction: column;
+    min-height: 100vh;
+    grid-template-rows: auto 1fr auto;
+}
+
+.header{
+    /*border-style: solid;*/
+    margin-top: 20px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    /*background-color: #b6230d;*/
+    background-color: var(--fondo-claro);
+    color: var(--blackblog);
+    display: flex;
+    height: 150px;
+    box-shadow: .5px .5px;
+}
+
+.h1{
+    padding: 20px 50px;
+    
+    font-family: 'Potta One', cursive;
+
+}
+.a-suscribite > a{
+    padding: 20px 50px;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-family: 'Potta One', cursive;
+    color: var(--blackblog);
+    font-weight: bold;
+} 
+
+
+.navegador{
+    background-color: var(--fondo-claro);
+    height: 30px;
+    position: sticky;
+    display: flex;
+    z-index: 100;
+    
+    align-items: center;
+    justify-content: end;
+    overflow: hidden;
+    margin-top:10px;
+}
+li{
+    display: inline;   
+    /*justify-content: center;*/
+   
+    align-items: center;
+    align-content: center;
+    margin-right:6px;
+    
+    
+}
+li  a{
+    text-decoration: none;
+    background-color: aquamarine;
+    background-color: #FF5733;
+    margin: 1px;
+    padding: 10px;
+    border-radius: 300px;
+    color: black;
+    font-weight: bold;
+}
+
+li a:hover {
+    background-color: #C70039 ;
+
+}
+/*****************************************************************/
+/*****************************************************************/
+.img-container {
+    /*display: flex;*/
+    /* Investigar la relacion entre display flex y float: left*/
+    float: left;
+    width: 50%;
+   /*padding: 5px;*/
+    display: block;
+    text-align: center;
+    overflow:auto;
+
+}
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.clearfix{
+    /*background-color: var(--dusty-rose);*/
+    background-color: var(--fondo-claro);
+    margin: 40px;
+}
+.clearfix img{
+    border-radius: 30px;
+    border: 1px solid rgb(139, 130, 238);
+}
+.foto-base{
+  
+    display: block;
+    margin: 20px auto;
+    border-radius: 30px;
+    width: 40%;
+
+}
+/*img{
+    margin: 10px;
+}*/
+.posts{
+    display: block;
+    padding: 20px;
+}
+.posts > a{
+    background-color: var(--fondo-claro);
+    padding:2px;
+    /*font-family: 'Edu VIC WA NT Beginner', cursive;*/
+    font-family: 'Arima', cursive;
+    font-weight: bold;
+    font-size: 1.4em;
+}
+.posts > a:hover{
+    background-color: var(--fondo-claro);
+    color: #C70039;
+}
+.post > img{
+    width: 60%;
+}
+.link-articulo{
+    display: block;
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: black;
+    width: 50%;
+    margin: auto;
+}
+.presentacion{
+    background-color: var(--tan);
+    padding: 20px;
+}
+.titulo-subtitulo{
+    display: flex;
+    float: left;
+    /*background-color: var(--blanco) ;*/
+    
+    
+}
+.titulo{
+    margin-top: 200px;
+    
+    text-align: center;
+    margin-left: 100px;
+    /*font-family: 'Bebas Neue', cursive;*/
+    /*font-family: 'Krub', sans-serif;*/
+
+    /*font-family: 'Oswald', sans-serif;*/
+    font-family: 'Potta One', cursive;
+    
+    font-size: 1.4rem;
+    /*font-weight: bold;*/
+    
+}
+.selfie{
+    display: block;
+    margin: 0px auto;
+    border-radius: 300px;
+}
+footer{
+    background-color: #F8C471 ;
+    
+    
+    text-align: center;
+    height: 120px;
+    padding-top: 20px;
+    border-radius: 2%;
+    font-family: 'Potta One', cursive; 
+}
+.titulo-post-view{
+    padding-top: 40px;
+    font-family: 'Arima', cursive;
+    text-align: center;
+   
+}
+.blogDate{
+    font-family: 'Arima', cursive;
+    text-align: center;
+}
+.imagen-post{
+    display: block;
+    margin: 80px;
+    border-radius: 30px;
+    border: 1px solid rgb(139, 130, 238);
+    width: 40%;
+    float: left;
+}
+.contenido-post{
+    margin: 80px;
+    line-height: 1.7;
+}
+    
+   
+.imagen-contenido img{
+    float: left;
+    
+}
+
+/* Form */
+
+/*input[type=text] {*/
+form{
+    text-align: left;
+}    
+form input{  
+    width: 40%;
+    padding: 5px 5px;
+    box-sizing: border-box;
+    border-radius: 10px;
+        
+}
+form input[type=submit]{
+    margin-bottom: 10px;
+}
+
+
+.foto-principal-ingresar img{
+    float: right;
+    border-radius: 30px;
+}
